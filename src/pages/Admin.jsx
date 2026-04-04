@@ -11,6 +11,7 @@ export default function Admin() {
     const [form, setForm] = useState({ naam: "", beschrijving: "", prijs: "" });
     const [afbeelding, setAfbeelding] = useState(null);
     const [downloadBestand, setDownloadBestand] = useState(null);
+    const [loginError, setLoginError] = useState("");
 
     const fetchProducten = async () => {
         const { data } = await supabase.from("producten").select("*");
@@ -32,8 +33,9 @@ export default function Admin() {
     const handleLogin = async (e) => {
         e.preventDefault();
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) alert(error.message);
+        if (error) setLoginError(error.message);
         else {
+            setLoginError("");
             setUser(data.user);
             fetchProducten();
         }
@@ -108,6 +110,11 @@ export default function Admin() {
                         className="w-full border border-slate-200 rounded-xl px-4 py-3"
                         onChange={(e) => setPassword(e.target.value)}
                     />
+                    {loginError && (
+                        <p className="text-red-500 text-sm font-semibold bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-left">
+                            E-Mail of wachtwoord is niet goed.
+                        </p>
+                    )}
                     <button
                         type="submit"
                         className="w-full bg-[#263759] text-white font-bold py-3 rounded-full hover:bg-red-500 transition"

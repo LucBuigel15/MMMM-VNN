@@ -42,9 +42,6 @@ export default function Producten() {
                                             Download
                                         </a>
                                     )}
-                                    <button className="bg-[#263759] text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-red-500 transition">
-                                        Kopen
-                                    </button>
                                 </div>
                             </div>
                         </div>

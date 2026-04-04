@@ -40,7 +40,7 @@ export default function Hero() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="text-white hover:text-red-400 transition duration-200 animate-bounce drop-shadow-lg"
+                        className="text-black hover:text-red-400 transition duration-200 animate-bounce drop-shadow-lg"
                     >
                         <path d="M12 5v14" />
                         <path d="m19 12-7 7-7-7" />

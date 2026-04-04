@@ -20,7 +20,7 @@ export default function Navbar() {
                         </div>
                     </a>
                     <div className="hidden md:flex space-x-8 text-[12px] font-bold text-white/90 uppercase tracking-widest">
-                        <a href="#" className="hover:text-red-400 transition">
+                        <a href="/#over-ons" className="hover:text-red-400 transition">
                             Over ons
                         </a>
                         <a href="/#verhalen" className="hover:text-red-400 transition">
@@ -53,7 +53,6 @@ export default function Navbar() {
                     </button>
                 </nav>
 
-                {/* Mobile menu dropdown */}
                 <AnimatePresence>
                     {open && (
                         <motion.div
@@ -67,13 +66,13 @@ export default function Navbar() {
                                 <motion.a
                                     key={item}
                                     href={
-                                        item === "Verhalen"
-                                            ? "#verhalen"
-                                            : item === "Producten"
-                                              ? "/producten"
-                                              : item === "Contact"
-                                                ? "#contact"
-                                                : "#"
+                                        item === "Over ons"
+                                            ? "/#over-ons"
+                                            : item === "Verhalen"
+                                              ? "/#verhalen"
+                                              : item === "Producten"
+                                                ? "/producten"
+                                                : "/#contact"
                                     }
                                     className="block px-8 py-4 text-white/90 font-bold text-sm uppercase tracking-widest hover:text-red-400 hover:bg-white/5 transition border-b border-white/10 last:border-0"
                                     initial={{ opacity: 0, x: -10 }}
