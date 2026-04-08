@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const opties = [
-    { icon: "💬", label: "Chatten" },
-    { icon: "📞", label: "Bellen" },
-    { icon: "✉️", label: "Mailen" },
+    { icon: <MessageCircle strokeWidth={3} />, label: "Chatten", link: "https://todo:linknaarvnn" },
+    { icon: <Phone strokeWidth={3} />, label: "Bellen", link: "tel:+0882343434" },
+    { icon: <Mail strokeWidth={3} />, label: "Mailen", link: "mailto:info@example.com" },
 ];
 
 export default function Contact() {
@@ -23,8 +24,9 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
                 {opties.map((o, i) => (
-                    <motion.div
+                    <motion.a
                         key={o.label}
+                        href={o.link}
                         className="p-10 border border-slate-100 rounded-4xl hover:shadow-2xl transition-all bg-slate-50/50 group cursor-pointer"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +38,7 @@ export default function Contact() {
                             {o.icon}
                         </div>
                         <h3 className="font-black text-xl italic uppercase tracking-tighter">{o.label}</h3>
-                    </motion.div>
+                    </motion.a>
                 ))}
             </div>
         </section>

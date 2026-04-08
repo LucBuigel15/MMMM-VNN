@@ -70,16 +70,14 @@ export default function Admin() {
                 if (error) throw error;
                 downloadUrl = supabase.storage.from("downloads").getPublicUrl(naam).data.publicUrl;
             }
-            const { error: insertError } = await supabase
-                .from("producten")
-                .insert([
-                    {
-                        ...form,
-                        prijs: parseFloat(form.prijs) || 0,
-                        afbeelding: afbeeldingUrl,
-                        download_url: downloadUrl,
-                    },
-                ]);
+            const { error: insertError } = await supabase.from("producten").insert([
+                {
+                    ...form,
+                    prijs: parseFloat(form.prijs) || 0,
+                    afbeelding: afbeeldingUrl,
+                    download_url: downloadUrl,
+                },
+            ]);
             if (insertError) throw insertError;
             setForm({ naam: "", beschrijving: "", prijs: "" });
             setAfbeelding(null);
@@ -109,7 +107,7 @@ export default function Admin() {
         if (error) {
             alert("Fout: " + error.message);
         } else {
-            alert("Admin aangemaakt! Hij/zij kan nu direct inloggen.");
+            alert("Nieuwe admin aangemaakt, toegewezen persoon kan nu inloggen met zijn gegevens.");
             setInviteEmail("");
             setInvitePassword("");
         }
@@ -210,7 +208,7 @@ export default function Admin() {
             </div>
 
             <div className="bg-slate-50 rounded-3xl p-8 mb-16 shadow-sm border border-slate-100">
-                <h2 className="font-bold text-xl text-[#263759] mb-6">Nieuwe Admin (Direct)</h2>
+                <h2 className="font-bold text-xl text-[#263759] mb-6">Nieuwe Admin</h2>
                 <div className="space-y-4">
                     <input
                         type="email"

@@ -20,7 +20,7 @@ export default function Stilstaan() {
         {
             kleur: "bg-sky-400",
             vraag: "Vind je het lastig om nee te zeggen tegen anderen?",
-            antwoord: "Sociale druk kan zwaar wegen. We bespreken hoe je bij jezelf blijft.",
+            antwoord: "Sociale druk kan zwaar wegen.",
             open: false,
         },
     ];

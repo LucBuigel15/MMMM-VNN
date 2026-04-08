@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <>
             <motion.div
-                className="sticky top-6 left-0 right-0 z-50 px-4"
+                className="fixed top-6 left-0 right-0 z-50 px-4 w-full"
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -20,9 +20,6 @@ export default function Navbar() {
                         </div>
                     </a>
                     <div className="hidden md:flex space-x-8 text-[12px] font-bold text-white/90 uppercase tracking-widest">
-                        <a href="/#over-ons" className="hover:text-red-400 transition">
-                            Over ons
-                        </a>
                         <a href="/#verhalen" className="hover:text-red-400 transition">
                             Verhalen
                         </a>
@@ -62,17 +59,15 @@ export default function Navbar() {
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
                         >
-                            {["Over ons", "Verhalen", "Producten", "Contact"].map((item, i) => (
+                            {["Verhalen", "Producten", "Contact"].map((item, i) => (
                                 <motion.a
                                     key={item}
                                     href={
-                                        item === "Over ons"
-                                            ? "/#over-ons"
-                                            : item === "Verhalen"
-                                              ? "/#verhalen"
-                                              : item === "Producten"
-                                                ? "/producten"
-                                                : "/#contact"
+                                        item === "Verhalen"
+                                            ? "/#verhalen"
+                                            : item === "Producten"
+                                              ? "/producten"
+                                              : "/#contact"
                                     }
                                     className="block px-8 py-4 text-white/90 font-bold text-sm uppercase tracking-widest hover:text-red-400 hover:bg-white/5 transition border-b border-white/10 last:border-0"
                                     initial={{ opacity: 0, x: -10 }}

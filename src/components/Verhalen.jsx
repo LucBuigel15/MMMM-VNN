@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
+import { User } from "lucide-react";
 
 const verhalen = [
     {
         quote: "Ik dacht dat ik alles onder controle had. Totdat ik merkte dat ik het nodig had om me een houding te geven.",
         naam: "Lisa, 22",
-        rol: "Student",
+        rol: "Baliemedewerkster bedrijf X.",
     },
     {
         quote: "Met feestjes en TikTok, leek er een constante stroom van druk en vergelijking op de achtergrond.",
         naam: "Daan, 19",
-        rol: "Vlogger",
+        rol: "Student",
     },
     {
         quote: "Mijn vrienden merken dat ik veranderd ben. Maar ik voelde het zelf al veel eerder.",
@@ -47,7 +48,7 @@ export default function Verhalen() {
                         </div>
                         <div className="mt-6 md:mt-0 md:ml-12 flex items-center gap-4 md:border-l border-slate-100 md:pl-8 min-w-50">
                             <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-xl">
-                                👤
+                                <User strokeWidth={3} />
                             </div>
                             <div>
                                 <div className="font-black text-slate-900 leading-none">{v.naam}</div>
