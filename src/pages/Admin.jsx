@@ -117,9 +117,9 @@ export default function Admin() {
 
     if (!user) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-white px-6">
-                <div className="w-full max-w-md text-center">
-                    <h1 className="text-3xl font-black text-[#263759] italic mb-8">Admin Login</h1>
+            <div className="min-h-screen flex items-center justify-center bg-slate-50 px-6">
+                <div className="w-full max-w-md bg-white p-8 rounded-[2rem] border border-slate-200 shadow-xl">
+                    <h1 className="text-3xl font-black text-[#263759] italic mb-8 text-center">Admin Login</h1>
                     <form onSubmit={handleLogin} className="space-y-4">
                         <input
                             type="email"
@@ -156,7 +156,7 @@ export default function Admin() {
     }
 
     return (
-        <div className="max-w-5xl mx-auto px-6 py-20">
+        <div className="max-w-5xl mx-auto px-6 py-20 mt-10">
             <div className="flex justify-between items-center mb-12">
                 <h1 className="text-4xl font-black text-[#263759] italic">Dashboard</h1>
                 <button

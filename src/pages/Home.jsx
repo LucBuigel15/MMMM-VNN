@@ -4,6 +4,7 @@ import Verhalen from "../components/Verhalen";
 import Contact from "../components/Contact";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Footer from "../components/Footer";
 
 export default function Home() {
     const { hash } = useLocation();
@@ -20,6 +21,7 @@ export default function Home() {
             <Stilstaan />
             <Verhalen />
             <Contact />
+            <Footer />
         </>
     );
 }
