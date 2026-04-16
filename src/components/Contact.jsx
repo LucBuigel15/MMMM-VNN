@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const opties = [
-    { icon: <MessageCircle strokeWidth={3} />, label: "Chatten", link: "https://todo:linknaarvnn" },
+    { icon: <MessageCircle strokeWidth={3} />, label: "Chatten", link: "https://www.vnn.nl/contact" },
     { icon: <Phone strokeWidth={3} />, label: "Bellen", link: "tel:+0882343434" },
     { icon: <Mail strokeWidth={3} />, label: "Mailen", link: "mailto:info@example.com" },
 ];

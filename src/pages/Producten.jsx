@@ -63,9 +63,6 @@ export default function Producten() {
                                 {p.naam}
                             </motion.h3>
                             <p className="text-slate-500 text-sm mt-1 line-clamp-2">{p.beschrijving}</p>
-                            <div className="mt-auto pt-4">
-                                <span className="font-bold text-red-500">€{p.prijs}</span>
-                            </div>
                         </div>
                     </motion.div>
                 ))}
@@ -104,7 +101,6 @@ export default function Producten() {
                                     </motion.h3>
                                     <p className="text-slate-500 text-base leading-relaxed">{selected.beschrijving}</p>
                                     <div className="flex justify-between items-center mt-6">
-                                        <span className="font-bold text-red-500 text-xl">€{selected.prijs}</span>
                                         <div className="flex gap-3">
                                             {selected.download_url && (
                                                 <button
